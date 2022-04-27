@@ -1,8 +1,21 @@
+import { Button } from '@mui/material';
 import type { NextPage } from 'next'
 
-const HomePage: NextPage = () => {
+type HomeProps = {
+  toggleTheme?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+const HomePage: NextPage = (props: HomeProps) => {
   return (
-    <h1>Hola mundo</h1>
+    <>
+      <h1>Hola mundo</h1>
+      <Button 
+        variant="outlined"
+        onClick={props.toggleTheme}
+      >
+      Toggle Theme
+      </Button>
+    </>
   )
 }
 
