@@ -1,5 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import type { NextPage } from 'next'
+import { Layout } from '../components/layouts';
 
 type HomeProps = {
   toggleTheme?: React.MouseEventHandler<HTMLButtonElement>;
@@ -7,8 +8,8 @@ type HomeProps = {
 
 const HomePage: NextPage = (props: HomeProps) => {
   return (
-    <>
-      <h1>Hola mundo</h1>
+    <Layout title='Inicio GC'>
+      <Typography variant='h1' color='primary'>Hola mundo</Typography>
       <Button 
         variant="outlined"
         onClick={props.toggleTheme}
@@ -37,13 +38,8 @@ const HomePage: NextPage = (props: HomeProps) => {
         error
       </Button>
 
-    <Typography 
-      variant="h3"
-      color="primary"
-    >
-      Hola mundo
-    </Typography>
-    </>
+
+    </Layout>
   )
 }
 

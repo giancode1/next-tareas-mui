@@ -5,19 +5,27 @@ export const lightTheme = createTheme({
     palette: {
         mode: 'light',
         background: {
-            default: grey[50],
+            default: grey[100],
         },
-        primary:{
+        primary: {
             main: '#4a148c',
         },
-        secondary:{
+        secondary: {
             main: '#19857b',
         },
-        error:{
+        error: {
             main: red.A400,
         },
     },
-    components: {  //nos permite hacer lso cambios de todos los elementos de material
-        
+    components: {  //nos permite hacer los cambios de todos los elementos de material
+        //siempre usar Mui al inicio
+        MuiAppBar: {
+            defaultProps: {
+                elevation: 0,
+            },
+            styleOverrides: {
+
+            }
+        }
     }
 });
