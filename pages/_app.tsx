@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 
 import type { AppProps } from 'next/app';
+import { UIProvider } from '../context/ui';
 
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { lightTheme, darkTheme } from '../themes';
@@ -35,10 +36,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 
   return (
-    <ThemeProvider theme={ activeTheme }>
-      <CssBaseline />
-      <Component {...pageProps} toggleTheme={toggleTheme}/>
-    </ThemeProvider>
+    <UIProvider>
+      <ThemeProvider theme={ activeTheme }>
+        <CssBaseline />
+        <Component {...pageProps} toggleTheme={toggleTheme}/>
+      </ThemeProvider>
+    </UIProvider>
   )
 }
 

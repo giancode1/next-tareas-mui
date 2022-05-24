@@ -1,9 +1,14 @@
-import { FC } from "react"
+import { FC, useContext } from "react"
+
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material"
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { grey } from '@mui/material/colors';
 
+import { UIContext } from "../../context/ui";
+
 export const Navbar:FC = () => {
+  const { openSideMenu } = useContext(UIContext);
+
   return (
     //   elevation quita la sombra
     <AppBar position='sticky' elevation={ 0 }>
@@ -11,6 +16,7 @@ export const Navbar:FC = () => {
             <IconButton
                 size='large'
                 edge='start'
+                onClick={ openSideMenu }
             >
                 <MenuOutlinedIcon sx={{ color: grey[50] }} />
             </IconButton>
